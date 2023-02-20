@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0px 20px;
+  background-color: rgb(95, 95, 95);
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+}
+
+.logo_Image {
+  height: 40px;
+  width: 40px;
+}
+
+.logo_Name {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.link {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  color: white;
+  background-color: rgb(95, 95, 95);
+}
+
+.link:hover {
+  color: black;
+}
+
+@media (min-width: 1200px) {
+  .header {
+    padding: 0px 150px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .header {
+    padding: 0px 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .header {
+    padding: 0px 250px;
+  }
+}

@@ -1,0 +1,85 @@
+.main {
+  padding: 50px 20px;
+  color: white;
+  /* background-image: url('../../../../public/assets/home_Background.jpg');
+    background-repeat: none; */
+  background-color: black;
+}
+
+.introduction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.introduction_Image {
+  height: 50%;
+  width: 50%;
+}
+
+.introduction_Info {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 40%;
+}
+
+.introduction_Header {
+  font-style: italic;
+}
+
+.introduction_Text {
+  width: 60%;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.button {
+  width: 150px;
+  height: 50px;
+
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background-color: gray;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+.new_Collection {
+  display: flex;
+  align-items: center;
+}
+
+.new_Collection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new_Collection_Info {
+  width: 40%;
+}
+
+@media (min-width: 1200px) {
+  .main {
+    padding: 50px 150px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .main {
+    padding: 50px 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main {
+    padding: 50px 250px;
+  }
+}
