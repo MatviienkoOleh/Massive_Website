@@ -1,0 +1,31 @@
+.main {
+  padding: 50px 20px;
+  color: white;
+  /* background-image: url('../../../../public/assets/home_Background.jpg');
+      background-repeat: none; */
+  background-color: black;
+}
+
+.list_Of_Shoes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1200px) {
+  .main {
+    padding: 50px 150px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .main {
+    padding: 50px 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main {
+    padding: 50px 250px;
+  }
+}

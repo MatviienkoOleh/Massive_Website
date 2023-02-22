@@ -6,10 +6,12 @@ import { FormI } from "../../../../interface/global";
 
 interface RegistrationFormProps {
   setIsRegistrationFormVisible: Function;
+  setIsFormVisible: Function;
 }
 
 export default function RegistrationForm({
   setIsRegistrationFormVisible,
+  setIsFormVisible
 }: RegistrationFormProps) {
   const [registrationData, setRegistrationData] = useState<FormI>({
     email: "",
@@ -75,9 +77,13 @@ export default function RegistrationForm({
       .then((userCredential) => {
         //signed in
         const user = userCredential.user;
-        console.log('User created!')
+        alert('User created !')
+        setIsFormVisible(false);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+        console.log(error.message);
+        alert('User not created ')
+      });
   };
   
   return (

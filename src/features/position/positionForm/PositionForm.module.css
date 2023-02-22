@@ -1,0 +1,41 @@
+.position_Form_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.position_CheckBox_Block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.position_TextArea {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.position_Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background-color: gray;
+  color: black;
+}
+
+.position_Button:hover {
+  background-color: white;
+  color: black;
+}

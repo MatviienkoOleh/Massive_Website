@@ -1,0 +1,42 @@
+.basket_Wrapper {
+
+}
+
+.basket_Main {
+    display: flex;
+    justify-content: space-between;
+    height: 70vh;
+    padding: 50px 20px;
+    color: white;
+    background-color: black;
+}
+
+.order_List {
+    width: 45%;
+    margin-top: 0px;
+    list-style-type: none;
+}
+
+.order_Form {
+    width: 45%;
+    background-color: green;
+}
+
+@media (min-width: 1200px) {
+    .basket_Main {
+      padding: 50px 150px;
+    }
+  }
+  
+  @media (min-width: 1300px) {
+    .basket_Main {
+      padding: 50px 200px;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .basket_Main {
+      padding: 50px 250px;
+    }
+  }
+  

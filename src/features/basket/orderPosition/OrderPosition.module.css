@@ -1,0 +1,52 @@
+.orderPosition_Wrapper {
+  display: flex;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  margin-left: -40px;
+  background-color: gray;
+  color: black;
+  border-radius: 10px;
+}
+
+.orderPosition_Image {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px 0px 0px 10px;
+  margin-right: 20px;
+}
+
+.orderPosition_Info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.orderPosition_List {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px 0px;
+  padding: 0px 0px;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.orderPosition_Item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+}
+
+.orderPosition_Delete {
+  cursor: pointer;
+  font-size: 20px;
+  color: darkred;
+}
+
+.orderPosition_Commentary {
+  font-style: italic;
+  word-break: break-all;
+  width: 100%;
+}

@@ -36,6 +36,10 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   width: 150px;
   height: 50px;
 
@@ -45,6 +49,7 @@
   border: none;
   cursor: pointer;
   background-color: gray;
+  color: black;
 }
 
 .button:hover {

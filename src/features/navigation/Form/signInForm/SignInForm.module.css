@@ -64,3 +64,8 @@
 .registration_Link:hover {
   border-bottom: 2px solid black;
 }
+
+.error {
+  color: yellow;
+  margin-bottom: 10px;
+}

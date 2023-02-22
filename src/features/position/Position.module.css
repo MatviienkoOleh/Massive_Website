@@ -1,0 +1,40 @@
+.position_Wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.main_Position {
+  padding: 50px 20px;
+  display: flex;
+  background-color: black;
+}
+
+.positionView_Box {
+  width: 45%;
+}
+
+.position_Form {
+  width: 55%;
+  padding: 0px 20px;
+}
+
+@media (min-width: 1200px) {
+  .main_Position {
+    padding: 50px 150px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .main_Position {
+    padding: 50px 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main_Position {
+    padding: 50px 250px;
+  }
+}
