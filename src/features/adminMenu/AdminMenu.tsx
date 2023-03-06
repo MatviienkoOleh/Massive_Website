@@ -41,7 +41,7 @@ export default function AdminMenu() {
     getAllListOfShoesFromDb();
   }, []);
 
-  return userEmail === email ? (
+  return email ? (
     <div>
       <Navigation />
       <main className={styles.AdminMenu_Main}>
