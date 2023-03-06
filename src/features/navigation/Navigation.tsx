@@ -62,7 +62,7 @@ export default function Navigation() {
             Basket
           </Link>
         ) : null}
-        {currentUser && currentUser.email === "matviienkooleh@gmail.com" ? (
+        {currentUser ? (
           <Link className={styles.link} to="/AdminMenu">
             Admin Menu
           </Link>
