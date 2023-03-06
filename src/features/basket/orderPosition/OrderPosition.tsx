@@ -13,9 +13,8 @@ export default function OrderPosition({ order }: OrderPositionProps) {
   const orderList = useAppSelector((state) => state.categories.order);
   const dispatch = useAppDispatch();
 
-  const deleteFromBucket = (id: string) => {
-    console.log(id);
-    dispatch(deletePositionFromOrder(id));
+  const deleteFromBucket = (model: number) => {
+    dispatch(deletePositionFromOrder(model));
   };
 
   return (
@@ -24,30 +23,30 @@ export default function OrderPosition({ order }: OrderPositionProps) {
       <div className={styles.orderPosition_Info}>
         <ul className={styles.orderPosition_List}>
           <li className={styles.orderPosition_Item}>
-            <b>Model:</b>
+            <b className={styles.orderPosition_Bold}>Model:</b>
             <span>№ {shoe.model}</span>
           </li>
           <li className={styles.orderPosition_Item}>
-            <b>Status:</b>
+            <b className={styles.orderPosition_Bold}>Status:</b>
             <span>{shoe.status}</span>
           </li>
           <li className={styles.orderPosition_Item}>
-            <b>Type:</b>
+            <b className={styles.orderPosition_Bold}>Type:</b>
             <span>{shoe.type}</span>
           </li>
           <li className={styles.orderPosition_Item}>
-            <b>Price:</b>
+            <b className={styles.orderPosition_Bold}>Price:</b>
             <span>{shoe.price} $</span>
           </li>
           <li
             className={styles.orderPosition_Delete}
-            onClick={() => deleteFromBucket(shoe.id)}
+            onClick={() => deleteFromBucket(shoe.model)}
           >
             ✖
           </li>
         </ul>
         <div className={styles.orderPosition_Commentary}>
-          <b>Message:</b> {commentary}
+          <b className={styles.orderPosition_Bold}>Message:</b> {commentary}
         </div>
       </div>
     </div>

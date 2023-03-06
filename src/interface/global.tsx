@@ -18,3 +18,26 @@ export interface OrderPositionI {
   size: string,
   commentary: string,
 }
+
+export interface PersonalDataI {
+  name: string,
+  secondName: string,
+  phone: string,
+  address: string,
+  email: string | null,
+}
+
+export interface OrderFromDBI {
+  personalData: PersonalDataI,
+  order: OrderPositionI[],
+}
+
+export interface CreateShoeI {
+  id: string;
+  model: number;
+  type: string;
+  status: string;
+  url: File | string;
+  price: number;
+  description: string;
+}

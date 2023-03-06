@@ -5,6 +5,7 @@ import { setOrderFromLocalStorage } from "../categories/categoriesSlice";
 import Footer from "../footer/Footer";
 import Navigation from "../navigation/Navigation";
 import styles from "./Basket.module.css";
+import OrderForm from "./orderForm/OrderForm";
 import OrderPosition from "./orderPosition/OrderPosition";
 
 export default function Basket() {
@@ -40,7 +41,7 @@ export default function Basket() {
               })
             : null}
         </ul>
-        <div className={styles.order_Form}>fqwfq</div>
+        <OrderForm />
       </main>
       <Footer />
     </div>

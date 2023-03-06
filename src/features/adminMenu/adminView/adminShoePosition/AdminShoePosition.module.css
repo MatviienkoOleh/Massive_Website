@@ -1,0 +1,71 @@
+.admin_Shoe_View_Position_Form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border: 1px solid darkgray;
+  padding: 5px;
+}
+
+.position_Input_Section {
+  display: flex;
+  align-items: center;
+}
+
+.positions_Label {
+  font-size: 18px;
+  border-bottom: 2px solid black;
+  font-style: italic;
+  margin-bottom: 5px;
+  width: 60px;
+}
+
+.admin_Shoe_View_Position_Input {
+  width: 90%;
+  margin-bottom: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-bottom: 2px solid darkgray;
+  font-size: 18px;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.readOnly {
+  cursor: none;
+}
+
+.admin_Shoe_View_Position_Input:focus {
+  outline: none;
+}
+
+.selection_Section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.position_Selectors {
+  font-size: 18px;
+  background-color: darkgray;
+  cursor: pointer;
+}
+
+.position_Button_Section {
+  display: flex;
+  flex-direction: column;
+}
+
+.position_Button {
+  border: none;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.position_Button:hover {
+  background-color: darkgray;
+  color: black;
+}

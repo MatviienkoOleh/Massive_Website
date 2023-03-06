@@ -1,0 +1,20 @@
+.orderForm_Label {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.orderForm_Input {
+    border: none;
+    border-bottom: 2px solid gray;
+    padding: 5px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-style: italic;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.orderForm_Input:focus {
+    outline: none;
+}

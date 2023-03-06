@@ -1,10 +1,36 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.carousel_Wrapper {
+  margin-bottom: 20px;
 }
 
-.image {
-    height: 32.5%;
-    width: 32.5%;
+.slider {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider_Image {
+  cursor: pointer;
+  background-color: white;
+  height: 250px;
+  width: 33%;
+  background-color: white;
+}
+
+
+@media (max-width: 600px) {
+  .slider {
+    height: 350px;
+    width: 100%;
+  }
+
+  .slider_Image {
+    cursor: pointer;
+    height: 300px;
+    width: 100%;
+  }
+
+  .slider_Hide_Picture {
+    display: none;
+  }
 }

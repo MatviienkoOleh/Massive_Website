@@ -21,3 +21,22 @@
   color: gray;
   transform: scale(1.3);
 }
+
+@media(max-width: 600px) {
+  .item {
+    font-size: 15px;
+  }
+}
+
+@media(max-width: 450px) {
+  .item {
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 350px) {
+  .item {
+    font-size: 10px;
+  }
+}
+

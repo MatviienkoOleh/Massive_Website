@@ -24,7 +24,7 @@ export default function Position() {
       <main className={styles.main_Position}>
         {arrayOfShoes
           .filter((shoe) => {
-            return shoe.id === positionId;
+            return shoe.model == +positionId;
           })
           .map((shoe) => {
             return (

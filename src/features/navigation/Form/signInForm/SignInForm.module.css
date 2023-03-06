@@ -69,3 +69,9 @@
   color: yellow;
   margin-bottom: 10px;
 }
+
+@media (max-width: 900px) {
+  .input {
+    width: 270px;
+  }
+}

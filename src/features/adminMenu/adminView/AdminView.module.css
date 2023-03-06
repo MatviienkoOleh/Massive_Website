@@ -1,0 +1,15 @@
+.admin_View_Wrapper {
+  width: 45%;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media (max-width: 650px) {
+  .admin_View_Wrapper {
+    width: 100%;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+}

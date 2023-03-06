@@ -10,6 +10,7 @@ export default function Navigation() {
   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
   const [currentUser, setCurrentUser] = useState<any>();
   const order = useAppSelector((state) => state.categories.order);
+  const listOfOrder = useAppSelector((state) => state.categories.order);
 
   const userAuthState = () => {
     onAuthStateChanged(auth, (user) => {
@@ -53,15 +54,17 @@ export default function Navigation() {
         <Link className={styles.link} to="/Categories">
           Catagories
         </Link>
-        <Link className={styles.link} to="/Sale">
+        <Link className={styles.link} to="/Sales">
           Sale
-        </Link>
-        <Link className={styles.link} to="/About us">
-          About us
         </Link>
         {order.length >= 1 ? (
           <Link className={styles.link} to="/Basket">
             Basket
+          </Link>
+        ) : null}
+        {currentUser && currentUser.email === "matviienkooleh@gmail.com" ? (
+          <Link className={styles.link} to="/AdminMenu">
+            Admin Menu
           </Link>
         ) : null}
         {currentUser ? (

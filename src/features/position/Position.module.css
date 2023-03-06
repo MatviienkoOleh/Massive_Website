@@ -38,3 +38,18 @@
     padding: 50px 250px;
   }
 }
+
+@media (max-width: 650px) {
+  .positionView_Box {
+    width: 100%;
+  }
+
+  .position_Form {
+    width: 100%;
+  }
+
+  .main_Position {
+    width: 100%;
+    flex-direction: column;
+  }
+}

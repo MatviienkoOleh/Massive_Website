@@ -19,7 +19,7 @@ export default function PositionForm() {
   };
   const addPositionToBucket = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const shoe = arrayOfShoes.find((shoe) => shoe.id === positionId);
+    const shoe = arrayOfShoes.find((shoe) => shoe.model === Number(positionId));
 
     if (!commentary) {
       alert("Fill in the commentary!");

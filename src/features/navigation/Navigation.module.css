@@ -62,3 +62,33 @@
     padding: 0px 250px;
   }
 }
+
+@media (max-width: 900px) {
+  .navigation {
+    width: 60%;
+  } 
+
+  .link {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    width: 70%;
+  } 
+
+  .link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 450px) {
+  .navigation {
+    width: 70%;
+  } 
+
+  .link {
+    font-size: 11px;
+  }
+}

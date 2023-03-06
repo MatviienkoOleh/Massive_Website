@@ -1,0 +1,46 @@
+.create_Position_HeadLine {
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.create_Position_Input {
+  border: none;
+  border-bottom: 2px solid gray;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-style: italic;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.create_Position_Input:focus {
+  outline: none;
+}
+
+.create_Position_Button_Label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid #ffeded;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.Upload_Image {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.create_Position_Button {
+  display: none;
+}
+
+.create_Position_Button_Label:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}

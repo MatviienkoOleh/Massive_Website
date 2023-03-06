@@ -1,0 +1,34 @@
+.AdminMenu_Main {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  padding: 50px 20px;
+}
+
+@media (min-width: 1200px) {
+  .AdminMenu_Main {
+    padding: 50px 150px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .AdminMenu_Main {
+    padding: 50px 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .AdminMenu_Main {
+    padding: 50px 250px;
+  }
+}
+
+@media (max-width: 650px) {
+  .AdminMenu_Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+  }
+}

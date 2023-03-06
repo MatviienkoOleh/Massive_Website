@@ -1,0 +1,26 @@
+.sales_main {
+    padding: 50px 20px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1200px) {
+    .sales_main {
+      padding: 50px 150px;
+    }
+  }
+  
+  @media (min-width: 1300px) {
+    .sales_main {
+      padding: 50px 200px;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .sales_main {
+      padding: 50px 250px;
+    }
+  }
+  

@@ -1,0 +1,67 @@
+.orderForm_Wrapper {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
+
+.orderForm_Form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.orderForm_Error {
+    color: darkred;
+    margin-bottom: 20px;
+}
+
+.orderForm_Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 150px;
+  height: 50px;
+
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background-color: gray;
+  color: black;
+}
+
+.orderForm_Button:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 950px) {
+  .orderForm_Wrapper {
+    width: 100%;
+  }
+
+  .orderForm_Form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .orderForm_Form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
+
+@media (max-width: 450px) {
+  .orderForm_Form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
