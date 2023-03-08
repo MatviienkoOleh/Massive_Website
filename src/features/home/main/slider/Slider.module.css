@@ -3,7 +3,7 @@
 }
 
 .slider {
-  height: 250px;
+  height: 350px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -12,11 +12,34 @@
 .slider_Image {
   cursor: pointer;
   background-color: white;
-  height: 250px;
+  height: 300px;
   width: 33%;
   background-color: white;
 }
 
+@media (max-width: 900px) {
+  .slider {
+    height: 300px;
+  }
+
+  .slider_Image {
+    cursor: pointer;
+    height: 250px;
+    width: 33%;
+  }
+}
+
+@media (max-width: 700px) {
+  .slider {
+    height: 250px;
+  }
+
+  .slider_Image {
+    cursor: pointer;
+    height: 200px;
+    width: 33%;
+  }
+}
 
 @media (max-width: 600px) {
   .slider {
