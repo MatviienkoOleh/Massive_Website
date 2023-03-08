@@ -2,124 +2,89 @@ import React, { useState } from "react";
 import { FormI } from "../../../../interface/global";
 import styles from "./SignInForm.module.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from '../../../../firebase';
+import { auth } from "../../../../firebase";
+import { useForm } from "react-hook-form";
 
 interface SignInFormProps {
   setIsRegistrationFormVisible: Function;
   setIsFormVisible: Function;
 }
 
+type FormState = {
+  email: string;
+  password: string;
+};
+
 export default function SignInForm({
   setIsRegistrationFormVisible,
   setIsFormVisible,
 }: SignInFormProps) {
-  const [signInData, setSignInData] = useState<FormI>({
-    email: "",
-    password: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormI>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   });
-  const [emailError, setEmailError] = useState<string>("Incorrect email...");
-  const [isVisibleEmailError, setIsVisibleEmailError] = useState<boolean>(false);
-  const [passwordError, setPasswordError] = useState<string>("Incorrect password...");
-  const [isVisiblePasswordError, setIsVisiblePasswordError] = useState<boolean>(false);
 
-  const onBlurHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    switch (event.target.id) {
-      case "email":
-        setIsVisibleEmailError(true);
-        break;
-      case "password":
-        setIsVisiblePasswordError(true);
-        break;
-      default:
-        break;
-    }
-  };
-  const onChangeHandlerPassword = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
-    const { id, value } = event.target;
-
-    setSignInData((prev: FormI) => {
-      return {
-        ...prev,
-        [id]: value,
-      };
-    });
-
-    if (signInData.password.length < 5) {
-      setPasswordError("Email should be longer that 5 symbols");
+  const onSubmit = (data: FormState) => {
+    if (data.email.length < 1 || data.password.length < 1) {
+      console.log('One field is empty');
     } else {
-      setPasswordError("");
+      signInWithEmailAndPassword(auth, data.email, data.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          alert("User logged !!!");
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+      setIsFormVisible(false);
     }
-  };
-  const onChangeHandlerEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = event.target;
-
-    setSignInData((prev: FormI) => {
-      return {
-        ...prev,
-        [id]: value,
-      };
-    });
-
-    if (signInData.email.length < 5) {
-      setEmailError("Email should be longer that 5 symbols");
-    } else if (!signInData.email.includes("@")) {
-      setEmailError("Email should contain symbol @ ...");
-    } else {
-      setEmailError("");
-    }
-  };
-  const signInMethod = (event: React.FormEvent) => {
-    event.preventDefault();
-    signInWithEmailAndPassword(auth, signInData.email, signInData.password).then((userCredential) => {
-      const user = userCredential.user;
-      alert('User logged !!!');
-    }).catch((error) => {console.log(error.message)});
-    setIsFormVisible(false);
   };
 
   return (
-    <form className={styles.signIn_Form} onSubmit={signInMethod}>
+    <form className={styles.signIn_Form} onSubmit={handleSubmit(onSubmit)}>
       <h1 className={styles.header}>Sign In</h1>
       <div className={styles.form}>
         <label className={styles.label} htmlFor="email">
           Email
         </label>
         <input
+          {...register("email", {
+            minLength: {
+              value: 5,
+              message: "Should be more than 5 and @ symbol.",
+            },
+            validate: {
+              randomValidate: (value) => {
+                return value.includes("@");
+              },
+            },
+          })}
           className={styles.input}
-          name="email"
           placeholder="Type your email"
-          id="email"
-          value={signInData.email}
-          onBlur={(event) => onBlurHandler(event)}
-          onChange={(event) => onChangeHandlerEmail(event)}
         />
-        {isVisibleEmailError ? (
-          <span className={styles.error}>{emailError}</span>
-        ) : null}
+        {<span className={styles.error}>{errors.email?.message}</span>}
         <label className={styles.label} htmlFor="password">
           Password
         </label>
         <input
+          {...register("password", {
+            minLength: {
+              value: 5,
+              message: "Length more than 5.",
+            },
+          })}
           className={styles.input}
-          name="password"
           placeholder="Type your password"
-          id="password"
-          value={signInData.password}
-          onBlur={(event) => onBlurHandler(event)}
-          onChange={(event) => onChangeHandlerPassword(event)}
         />
-        {isVisiblePasswordError ? (
-          <span className={styles.error}>{passwordError}</span>
-        ) : null}
+        {<span className={styles.error}>{errors.password?.message}</span>}
         <div className={styles.button_Block}>
-          <button
-            className={styles.button}
-            disabled={passwordError || emailError ? true : false}
-          >
-            Sing In
-          </button>
+          <button className={styles.button}>Sing In</button>
           <span
             className={styles.registration_Link}
             onClick={() => setIsRegistrationFormVisible(true)}
