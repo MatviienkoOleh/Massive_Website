@@ -1,48 +1,43 @@
-import React from "react";
 import Footer from "../../footer/Footer";
 import Navigation from "../Navigation";
 import styles from "./Contact.module.css";
 import { useForm } from "react-hook-form";
 import { FormContactI } from "../../../interface/global";
+import { db } from "../../../firebase";
+import { push, ref } from "firebase/database";
 
 export default function Contact() {
-
-  // const userAuthState = () => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       console.log("User logged");
-  //       setCurrentUser(user);
-  //     } else {
-  //       console.log("User unLogged");
-  //     }
-  //   });
-  // };
-  
-
-
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormContactI>({
     defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
+      firstName: "",
+      lastName: "",
+      email: "",
       phoneNumber: null,
-      message: '',
-    }
+      message: "",
+    },
   });
 
   const onSubmit = (data: FormContactI) => {
-    console.log('form Data: ', data);
+    const reference = ref(db, "userMessages");
+    push(reference, {
+      ...data,
+    });
+    alert('Your message has sent. Our shop-assistant will reply on your email.')
+    reset();
   };
 
   return (
     <div>
       <Navigation />
       <main className={styles.contact_wrapper}>
-        <h1 className={styles.contact_Form_HeadLine}>Talk with our shop assistant</h1>
+        <h1 className={styles.contact_Form_HeadLine}>
+          Talk with our shop assistant
+        </h1>
         <form className={styles.contact_Form} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.contact_Input_Block}>
             <label className={styles.contact_Label} htmlFor="firstName">
@@ -120,7 +115,7 @@ export default function Contact() {
               Phone number
             </label>
             <input
-              type='number'
+              type="number"
               placeholder="+380638098742"
               className={styles.contact_Input}
               {...register("phoneNumber")}

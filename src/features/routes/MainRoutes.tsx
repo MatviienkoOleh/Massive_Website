@@ -11,17 +11,17 @@ import Sales from "../sales/Sales";
 
 export default function MainRoutes() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Categories" element={<Categories />} />
-        <Route path="/Position" element={<Position />} />
-        <Route path="/Basket" element={<Basket />} />
-        <Route path="/AdminMenu" element={<AdminMenu />} />
-        <Route path="/Sales" element={<Sales />} />
-        <Route path="*" element={<Error />} />
-        <Route path="Contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Categories" element={<Categories />} />
+          <Route path="/Position" element={<Position />} />
+          <Route path="/Basket" element={<Basket />} />
+          <Route path="/AdminMenu" element={<AdminMenu />} />
+          <Route path="/Sales" element={<Sales />} />
+          <Route path="*" element={<Error />} />
+          <Route path="Contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
   );
 }

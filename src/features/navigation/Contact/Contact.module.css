@@ -7,10 +7,10 @@
 }
 
 .contact_Form_HeadLine {
-    color: white;
-    margin: 0px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+  color: white;
+  margin: 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .contact_Form {
@@ -24,6 +24,7 @@
   font-style: italic;
   background-color: white;
   color: black;
+  margin-bottom: 50px;
 }
 
 .contact_Input_Block {
@@ -139,4 +140,24 @@
   font-size: 18px;
   font-style: italic;
   font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .contact_Form {
+    width: 450px;
+  }
+}
+
+@media (max-width: 460px) {
+  .contact_Form_HeadLine {
+    text-align: center;
+  }
+
+  .contact_Form {
+    flex-direction: column;
+    width: 350px;
+  }
+  .contact_Input_Block {
+    width: 100%;
+  }
 }
