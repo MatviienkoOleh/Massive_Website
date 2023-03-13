@@ -28,9 +28,13 @@
   justify-content: space-between;
   align-items: center;
   width: 50%;
+  height: 100%;
 }
 
 .link {
+  display: flex;
+  align-items: center;
+  height: 100%;
   font-size: 18px;
   font-style: italic;
   font-weight: 600;
@@ -43,6 +47,65 @@
 
 .link:hover {
   color: black;
+}
+
+.dropDown_Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.dropDown_Button {
+  height: 100%;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  color: white;
+  background-color: rgb(95, 95, 95);
+}
+
+.dropDown_Menu {
+  padding: 10px;
+  top: 60px;
+  left: 0px;
+  width: 120px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  background-color: rgb(95, 95, 95);
+}
+
+.dropDown_Menu_Links {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  height: 30px;
+
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  color: white;
+}
+
+.dropDown_Menu_Links:hover {
+  color: black;
+}
+
+.dropDown_Button:hover {
+  color: black;
+}
+
+.dropDown_Container:hover .dropDown_Menu {
+  display: flex;
 }
 
 @media (min-width: 1200px) {
@@ -66,9 +129,13 @@
 @media (max-width: 900px) {
   .navigation {
     width: 60%;
-  } 
+  }
 
   .link {
+    font-size: 15px;
+  }
+
+  .dropDown_Button {
     font-size: 15px;
   }
 }
@@ -76,9 +143,13 @@
 @media (max-width: 600px) {
   .navigation {
     width: 70%;
-  } 
+  }
 
   .link {
+    font-size: 13px;
+  }
+
+  .dropDown_Button {
     font-size: 13px;
   }
 }
@@ -86,9 +157,13 @@
 @media (max-width: 450px) {
   .navigation {
     width: 70%;
-  } 
+  }
 
   .link {
+    font-size: 11px;
+  }
+
+  .dropDown_Button {
     font-size: 11px;
   }
 }

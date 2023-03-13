@@ -57,6 +57,15 @@ export default function Navigation() {
         <Link className={styles.link} to="/Sales">
           Sale
         </Link>
+        <div className={[styles.link, styles.dropDown_Container].join(' ')}>
+          <button className={styles.dropDown_Button}>About</button>
+          <ul className={styles.dropDown_Menu}>
+              <li className={styles.dropDown_Menu_Links}>History</li>
+              <li className={styles.dropDown_Menu_Links}>About us</li>
+              <li className={styles.dropDown_Menu_Links}>Contact us</li>
+              <li className={styles.dropDown_Menu_Links}>FAQ</li>
+          </ul>
+        </div>
         {order.length >= 1 ? (
           <Link className={styles.link} to="/Basket">
             Basket
