@@ -3,6 +3,14 @@ export interface FormI {
   password: string;
 }
 
+export interface FormContactI {
+  firstName: string,
+  lastName: string,
+  email: string,
+  phoneNumber: number | null,
+  message: string,
+}
+
 export interface ShoeI {
   id: string;
   model: number;
