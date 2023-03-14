@@ -1,0 +1,156 @@
+.about_Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: black;
+  color: white;
+
+  font-style: italic;
+}
+
+.about_Sections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 80px;
+  margin-bottom: 50px;
+
+  color: black;
+  background-color: whitesmoke;
+}
+
+.about_Headers {
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.about_Paragraphs {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.about_Leaders_Block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.about_Leaders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  background-color: lightgray;
+}
+
+.about_Leaders_Image {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.about_Leaders_Name {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.about_Leaders_Info {
+  font-size: 18px;
+  text-align: center;
+}
+
+.about_Location_Block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.about_Location {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 45%;
+  padding: 20px 30px;
+}
+
+.about_Location_Image {
+  height: 130px;
+  width: 130px;
+}
+
+.about_Location_Info {
+  display: flex;
+  flex-direction: column;
+}
+
+.about_Location_Info {
+  font-size: 14px;
+}
+
+@media (min-width: 1200px) {
+  .about_Wrapper {
+    padding: 50px 150px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .about_Wrapper {
+    padding: 50px 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about_Wrapper {
+    padding: 50px 250px;
+  }
+}
+
+@media (max-width: 730px) {
+  .about_Leaders {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .about_Sections {
+    padding: 30px 30px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  .about_Location_Block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about_Location {
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .about_Location_Image {
+    height: 100px;
+    width: 100px;
+  }
+
+  .about_Location_Info {
+    font-size: 12px;
+  }
+}

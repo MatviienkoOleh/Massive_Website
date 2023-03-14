@@ -5,6 +5,7 @@ import Basket from "../basket/Basket";
 import Categories from "../categories/Categories";
 import Error from "../Error/Error";
 import Home from "../home/Home";
+import About from "../navigation/About/About";
 import Contact from "../navigation/Contact/Contact";
 import Position from "../position/Position";
 import Sales from "../sales/Sales";
@@ -21,6 +22,7 @@ export default function MainRoutes() {
           <Route path="/Sales" element={<Sales />} />
           <Route path="*" element={<Error />} />
           <Route path="Contact" element={<Contact />} />
+          <Route path="About" element={<About />} />
         </Routes>
       </BrowserRouter>
   );
