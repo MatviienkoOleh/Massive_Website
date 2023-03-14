@@ -60,13 +60,13 @@ export default function Navigation() {
         <div className={[styles.link, styles.dropDown_Container].join(" ")}>
           <button className={styles.dropDown_Button}>About</button>
           <ul className={styles.dropDown_Menu}>
-            <Link className={styles.dropDown_Menu_Links} to="About">
+            <Link className={styles.dropDown_Menu_Links} to="/About">
               <li>About us</li>
             </Link>
-            <Link className={styles.dropDown_Menu_Links} to="Contact">
+            <Link className={styles.dropDown_Menu_Links} to="/Contact">
               <li>Contact us</li>
             </Link>
-            <Link className={styles.dropDown_Menu_Links} to="FAQ">
+            <Link className={styles.dropDown_Menu_Links} to="/FAQ">
               <li>FAQ</li>
             </Link>
           </ul>
