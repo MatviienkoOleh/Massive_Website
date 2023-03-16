@@ -7,7 +7,7 @@ interface UserMessageProps {
 }
 
 export default function UserMessage({
-  user: { uid, message, firstName, lastName, phoneNumber },
+  user: { uid, message, firstName, lastName, phoneNumber, email },
 }: UserMessageProps) {
   return (
     <div className={styles.user_Wrapper}>
@@ -16,6 +16,7 @@ export default function UserMessage({
           <span style={{marginRight: '5px'}}>{firstName}</span>
           <span>{lastName}</span>
         </div>
+        <span>{email}</span>
         <span>{phoneNumber}</span>
       </div>
       <span>{message}</span>
