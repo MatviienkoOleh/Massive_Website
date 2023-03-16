@@ -1,7 +1,8 @@
 .create_Form {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .Image_Block {

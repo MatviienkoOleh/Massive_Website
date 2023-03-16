@@ -40,6 +40,15 @@ export interface OrderFromDBI {
   order: OrderPositionI[],
 }
 
+export interface userMessages {
+  email: string,
+  firstName: string,
+  lastName: string,
+  message: string,
+  phoneNumber: string,
+  uid: string,
+}
+
 export interface CreateShoeI {
   id: string;
   model: number;

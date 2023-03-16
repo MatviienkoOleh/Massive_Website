@@ -21,7 +21,7 @@
 }
 
 .faq_HeadLine {
-    text-align: center;
+  text-align: center;
 }
 
 .faq_Question {
@@ -78,8 +78,8 @@
   }
 }
 
-@media(max-width: 500px) {
-    .faq_Section {
-        padding: 30px 20px;
-    }
+@media (max-width: 500px) {
+  .faq_Section {
+    padding: 30px 20px;
+  }
 }

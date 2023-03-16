@@ -1,0 +1,34 @@
+.admin_Messages_Wrapper {
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.headLine {
+  font-size: 26px;
+  font-style: italic;
+  width: 100%;
+  text-align: center;
+}
+
+.messages_button {
+  width: 150px;
+  border: none;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+    border: 1px solid black;
+
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  background-color: darkgray;
+}
+
+.messages_button:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}

@@ -1,4 +1,9 @@
-import { OrderFromDBI, OrderPositionI, ShoeI } from "./../../interface/global";
+import {
+  OrderFromDBI,
+  OrderPositionI,
+  ShoeI,
+  userMessages,
+} from "./../../interface/global";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, AppThunk } from "../../app/store";
 import { act } from "react-dom/test-utils";
@@ -8,6 +13,7 @@ export interface CategoriesState {
   order: OrderPositionI[];
   arrayOfShoes: ShoeI[];
   ordersFromDB: OrderFromDBI[];
+  messagesFromDB: userMessages[];
   userEmail: string;
 }
 
@@ -16,7 +22,8 @@ const initialState: CategoriesState = {
   order: [],
   arrayOfShoes: [],
   ordersFromDB: [],
-  userEmail: 'matviienkooleh@gmail.com',
+  messagesFromDB: [],
+  userEmail: "matviienkooleh@gmail.com",
 };
 
 export const categoriesSlice = createSlice({
@@ -27,8 +34,10 @@ export const categoriesSlice = createSlice({
       state.positionId = action.payload;
     },
     addPositionToOrder: (state, action) => {
-      let index = state.order.findIndex((orderP, index) => orderP.shoe.model === action.payload.shoe.model)
-      if( index < 0) {
+      let index = state.order.findIndex(
+        (orderP, index) => orderP.shoe.model === action.payload.shoe.model
+      );
+      if (index < 0) {
         state.order.push(action.payload);
       }
     },
@@ -50,8 +59,22 @@ export const categoriesSlice = createSlice({
       state.ordersFromDB = [...action.payload];
     },
     setArrayOfShoesFormDb: (state, action) => {
-      if(action.payload) {
+      if (action.payload) {
         state.arrayOfShoes = [...action.payload.filtered];
+      }
+    },
+    setArrayOfMessagesFromDb: (state, action) => {
+      state.messagesFromDB = [];
+
+      if(action.payload !== null) {
+        let keysArr = Object.keys(action.payload);
+        keysArr.forEach((id) => {
+          let newMessage = {
+            ...action.payload[id],
+            uid: id,
+          };
+          state.messagesFromDB.push(newMessage);
+        });
       }
     },
   },
@@ -65,6 +88,7 @@ export const {
   deletePositionFromOrder,
   setOrdersFromDb,
   setArrayOfShoesFormDb,
+  setArrayOfMessagesFromDb,
 } = categoriesSlice.actions;
 
 export const selectCount = (state: RootState) => state.categories;

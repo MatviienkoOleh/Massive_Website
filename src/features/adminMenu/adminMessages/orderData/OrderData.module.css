@@ -1,0 +1,49 @@
+.order_Data_Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+
+  cursor: pointer;
+  font-style: italic;
+  background-color: white;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+
+.order_Data_Wrapper:hover {
+  background-color: rgb(3, 3, 3);
+  color: rgb(255, 255, 255);
+  border-color: white;
+}
+
+.PersonalData {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.personalData_Order_Info {
+  width: 100%;
+  text-align: center;
+}
+
+.pos_Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.order_Pos_Info {
+  margin-right: 15px;
+}
+
+.pos_Model_Info {
+
+}
