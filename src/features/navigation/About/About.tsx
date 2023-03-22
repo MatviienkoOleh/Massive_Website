@@ -1,13 +1,16 @@
 import React from "react";
+import { useAppSelector } from "../../../app/hooks";
 import Footer from "../../footer/Footer";
 import Navigation from "../Navigation";
 import styles from "./About.module.css";
 
 export default function About() {
+  const isVisiblePopUp = useAppSelector(state=> state.categories.isVisiblePopUp);
+
   return (
     <>
       <Navigation />
-      <main className={styles.about_Wrapper}>
+      <main className={styles.about_Wrapper} style={isVisiblePopUp ? {display: 'none'} : {display: 'flex'}}>
         <section className={styles.about_Sections}>
           <h2 className={styles.about_Headers}>- About -</h2>
           <p className={styles.about_Paragraphs}>

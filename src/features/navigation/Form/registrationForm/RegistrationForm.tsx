@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase";
 import { FormI } from "../../../../interface/global";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 interface RegistrationFormProps {
   setIsRegistrationFormVisible: Function;
@@ -24,6 +25,7 @@ export default function RegistrationForm({
       password: "",
     },
   });
+  const navigation = useNavigate();
 
   const onSubmit = (data: FormI) => {
     if (data.email.length < 1 || data.password.length < 1) {
@@ -40,6 +42,7 @@ export default function RegistrationForm({
           console.log(error.message);
           alert("User not created ");
         });
+      navigation("/");
     }
   };
 

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { FormContactI } from "../../../interface/global";
 import { db } from "../../../firebase";
 import { push, ref } from "firebase/database";
+import { useAppSelector } from "../../../app/hooks";
 
 export default function Contact() {
   const {
@@ -21,6 +22,8 @@ export default function Contact() {
       message: "",
     },
   });
+  const isVisiblePopUp = useAppSelector((state) => state.categories.isVisiblePopUp);
+
 
   const onSubmit = (data: FormContactI) => {
     const reference = ref(db, "userMessages");
@@ -34,7 +37,7 @@ export default function Contact() {
   return (
     <div>
       <Navigation />
-      <main className={styles.contact_wrapper}>
+      <main className={styles.contact_wrapper} style={isVisiblePopUp ? {display: 'none'} : {display: 'flex'}}>
         <h1 className={styles.contact_Form_HeadLine}>
           Talk with our shop assistant
         </h1>

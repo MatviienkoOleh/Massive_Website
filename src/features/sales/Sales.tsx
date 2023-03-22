@@ -11,6 +11,7 @@ export default function Sales() {
   const arrayOfShoes = useAppSelector((state) => state.categories.arrayOfShoes);
   const dispatch = useAppDispatch();
   const navigate= useNavigate();
+  const isVisiblePopUp = useAppSelector(state=> state.categories.isVisiblePopUp);
 
   const navigateToPosition = (model: string): void => {
     dispatch(addPositionId(model))
@@ -20,7 +21,7 @@ export default function Sales() {
   return (
     <div>
       <Navigation />
-      <main className={styles.sales_main}>
+      <main className={styles.sales_main} style={isVisiblePopUp ? {display: 'none'} : {display: 'flex'}}>
         {arrayOfShoes
           .filter((shoe) => shoe.status === 'sale')
           .map((shoe) => {

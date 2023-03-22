@@ -12,6 +12,7 @@ export default function Basket() {
   const listOfOrder = useAppSelector((state) => state.categories.order);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const isVisiblePopUp = useAppSelector(state=> state.categories.isVisiblePopUp);
 
   useEffect(() => {
     if (listOfOrder.length !== 0) {
@@ -29,7 +30,7 @@ export default function Basket() {
   return (
     <div className={styles.basket_Wrapper}>
       <Navigation />
-      <main className={styles.basket_Main}>
+      <main className={styles.basket_Main} style={isVisiblePopUp ? {display: 'none'} : {display: 'flex'}}>
         <ul className={styles.order_List}>
           {listOfOrder
             ? listOfOrder.map((order, index) => {

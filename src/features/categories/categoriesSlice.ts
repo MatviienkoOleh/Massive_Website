@@ -4,9 +4,8 @@ import {
   ShoeI,
   userMessages,
 } from "./../../interface/global";
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState, AppThunk } from "../../app/store";
-import { act } from "react-dom/test-utils";
+import {  createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
 
 export interface CategoriesState {
   positionId: string;
@@ -15,6 +14,7 @@ export interface CategoriesState {
   ordersFromDB: OrderFromDBI[];
   messagesFromDB: userMessages[];
   userEmail: string;
+  isVisiblePopUp: boolean;
 }
 
 const initialState: CategoriesState = {
@@ -24,6 +24,7 @@ const initialState: CategoriesState = {
   ordersFromDB: [],
   messagesFromDB: [],
   userEmail: "matviienkooleh@gmail.com",
+  isVisiblePopUp: false,
 };
 
 export const categoriesSlice = createSlice({
@@ -77,6 +78,9 @@ export const categoriesSlice = createSlice({
         });
       }
     },
+    setIsPopUpVisible: (state, action) => {
+      state.isVisiblePopUp = action.payload;
+    }
   },
 });
 
@@ -89,6 +93,7 @@ export const {
   setOrdersFromDb,
   setArrayOfShoesFormDb,
   setArrayOfMessagesFromDb,
+  setIsPopUpVisible,
 } = categoriesSlice.actions;
 
 export const selectCount = (state: RootState) => state.categories;

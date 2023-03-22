@@ -36,13 +36,17 @@ export default function Slider() {
               onClick={() => navigateToPosition(String(newCollection[0].model))}
             />
             <img
-              className={[styles.slider_Image, styles.slider_Hide_Picture].join(' ')}
+              className={[styles.slider_Image, styles.slider_Hide_Picture].join(
+                " "
+              )}
               src={newCollection[1] ? newCollection[1].url : imageSlider}
               alt="First slide"
               onClick={() => navigateToPosition(String(newCollection[1].model))}
             />
             <img
-              className={[styles.slider_Image, styles.slider_Hide_Picture].join(' ')}
+              className={[styles.slider_Image, styles.slider_Hide_Picture].join(
+                " "
+              )}
               src={newCollection[2] ? newCollection[2].url : imageSlider}
               alt="First slide"
               onClick={() => navigateToPosition(String(newCollection[2].model))}
@@ -62,13 +66,17 @@ export default function Slider() {
               onClick={() => navigateToPosition(String(oldCollection[0].model))}
             />
             <img
-              className={[styles.slider_Image, styles.slider_Hide_Picture].join(' ')}
+              className={[styles.slider_Image, styles.slider_Hide_Picture].join(
+                " "
+              )}
               src={oldCollection[1] ? oldCollection[1].url : imageSlider}
               alt="First slide"
               onClick={() => navigateToPosition(String(oldCollection[1].model))}
             />
             <img
-              className={[styles.slider_Image, styles.slider_Hide_Picture].join(' ')}
+              className={[styles.slider_Image, styles.slider_Hide_Picture].join(
+                " "
+              )}
               src={oldCollection[2] ? oldCollection[2].url : imageSlider}
               alt="First slide"
               onClick={() => navigateToPosition(String(oldCollection[2].model))}
@@ -90,7 +98,9 @@ export default function Slider() {
               }
             />
             <img
-              className={[styles.slider_Image, styles.slider_Hide_Picture].join(' ')}
+              className={[styles.slider_Image, styles.slider_Hide_Picture].join(
+                " "
+              )}
               src={saleCollection[1] ? saleCollection[1].url : imageSlider}
               alt="First slide"
               onClick={() =>
@@ -98,7 +108,9 @@ export default function Slider() {
               }
             />
             <img
-              className={[styles.slider_Image, styles.slider_Hide_Picture].join(' ')}
+              className={[styles.slider_Image, styles.slider_Hide_Picture].join(
+                " "
+              )}
               src={saleCollection[2] ? saleCollection[2].url : imageSlider}
               alt="First slide"
               onClick={() =>

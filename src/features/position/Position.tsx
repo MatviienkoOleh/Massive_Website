@@ -11,6 +11,9 @@ export default function Position() {
   const positionId = useAppSelector((state) => state.categories.positionId);
   const arrayOfShoes = useAppSelector((state) => state.categories.arrayOfShoes);
   const navigate = useNavigate();
+  const isVisiblePopUp = useAppSelector(
+    (state) => state.categories.isVisiblePopUp
+  );
 
   useEffect(() => {
     if (positionId.length < 1) {
@@ -21,7 +24,10 @@ export default function Position() {
   return (
     <div className={styles.position_Wrapper}>
       <Navigation />
-      <main className={styles.main_Position}>
+      <main
+        className={styles.main_Position}
+        style={isVisiblePopUp ? { display: "none" } : { display: "flex" }}
+      >
         {arrayOfShoes
           .filter((shoe) => {
             return shoe.model == +positionId;

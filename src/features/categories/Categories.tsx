@@ -15,7 +15,8 @@ export default function Categories() {
   const [currentType, setCurrentType] = useState<string>("all");
   const arrayOfShoes = useAppSelector(state=> state.categories.arrayOfShoes);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const isVisiblePopUp = useAppSelector(state=> state.categories.isVisiblePopUp);
 
   const navigateToPosition = (id: string): void => {
     dispatch(addPositionId(id))
@@ -35,7 +36,7 @@ export default function Categories() {
   return (
     <div className={styles.categories}>
       <Navigation />
-      <main className={styles.main}>
+      <main className={styles.main} style={isVisiblePopUp ? {display: 'none'} : {display: 'block'}}>
         <CategoriesNav setCurrentType={setCurrentType} />
         <div className={styles.list_Of_Shoes}>
           {arrayOfShoes

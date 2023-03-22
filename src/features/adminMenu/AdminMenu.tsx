@@ -17,6 +17,7 @@ export default function AdminMenu() {
   // const userEmail = useAppSelector((state) => state.categories.userEmail);
   const [email, setEmail] = useState<string>("");
   const dispatch = useAppDispatch();
+  const isVisiblePopUp = useAppSelector(state=>state.categories.isVisiblePopUp);
 
   const adminState = () => {
     onAuthStateChanged(auth, (user) => {
@@ -41,7 +42,6 @@ export default function AdminMenu() {
       dispatch(setArrayOfMessagesFromDb(listOfMessages));
     })
   };
-
   const getListOfOrdersFromDb = () => {
     const refToMessages = ref(db, 'orders');
     onValue(refToMessages, (snapshot) => {
@@ -60,7 +60,7 @@ export default function AdminMenu() {
   return email ? (
     <div>
       <Navigation />
-      <main className={styles.AdminMenu_Main}>
+      <main className={styles.AdminMenu_Main} style={isVisiblePopUp ? {display: 'none'} : {display: 'flex'}}>
         <AdminView />
         <section className={styles.adminMenu_Section}>
           <AdminCreateForm />

@@ -4,12 +4,13 @@ import styles from "./Main.module.css";
 import Slider from "./slider/Slider";
 import { ref, onValue } from "firebase/database";
 import { db } from "../../../firebase";
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { setArrayOfShoesFormDb, setOrdersFromDb } from "../../categories/categoriesSlice";
 import { OrderFromDBI, ShoeI } from "../../../interface/global";
 
 export default function Main() {
   const dispatch = useAppDispatch();
+  const isVisiblePopUp = useAppSelector(state=> state.categories.isVisiblePopUp);
 
   const getOrdersFromDb = () => {
     const reference = ref(db, "orders");
@@ -32,7 +33,7 @@ export default function Main() {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} style={isVisiblePopUp ? {display: 'none'} : {display: 'block'}}>
       <div className={styles.introduction}>
         <img
           className={styles.introduction_Image}

@@ -4,6 +4,7 @@ import styles from "./SignInForm.module.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 interface SignInFormProps {
   setIsRegistrationFormVisible: Function;
@@ -29,6 +30,7 @@ export default function SignInForm({
       password: "",
     },
   });
+  const navigation = useNavigate();
 
   const onSubmit = (data: FormState) => {
     if (data.email.length < 1 || data.password.length < 1) {
@@ -43,6 +45,7 @@ export default function SignInForm({
           console.log(error.message);
         });
       setIsFormVisible(false);
+      navigation('/');
     }
   };
 

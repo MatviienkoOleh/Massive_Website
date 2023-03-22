@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAppSelector } from "../../../app/hooks";
 import Footer from "../../footer/Footer";
 import Navigation from "../Navigation";
 import styles from "./FAQ.module.css";
@@ -104,6 +105,7 @@ export default function FAQ() {
         " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, tempore voluptatem. Accusantium ipsam qui vero et consequatur harum voluptas nobis voluptatibus iusto, reprehenderit distinctio deleniti atque? Tempore accusamus laboriosam dicta.",
     },
   ]);
+  const isVisiblePopUp = useAppSelector(state=> state.categories.isVisiblePopUp);
 
   const openAnswer = (id: number) => {
     if (idVisible === id) {
@@ -118,7 +120,7 @@ export default function FAQ() {
   return (
     <>
       <Navigation />
-      <main className={styles.faq_Wrapper}>
+      <main className={styles.faq_Wrapper} style={isVisiblePopUp ? {display: 'none'} : {display: 'flex'}}>
         <h1 className={styles.faq_HeadLine}>Frequently Asked Questions</h1>
         <section className={styles.faq_Section}>
           {questions.map((question) => {
